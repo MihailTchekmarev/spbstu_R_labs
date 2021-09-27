@@ -8,10 +8,9 @@ func <- function(d) {
       if (!(elem %in% data[[i]]$id)) {
         out <- c(out, elem)
       } else {
-        res$mean_temp[[which(res$id == elem)]] <- res$mean_temp[[which(res$id == elem)]] + data[[i]]$temp[[which(data[[i]]$id == elem)]]
+        res$mean_temp[[which(res$id == elem)[[1]]]] <- res$mean_temp[[which(res$id == elem)[[1]]]] + data[[i]]$temp[[which(data[[i]]$id == elem)[[1]]]]
       }
-    }
-    
+    }    
     i <- i + 1
     if (i > 7) {
       res <- res[!(res$id %in% out),]
